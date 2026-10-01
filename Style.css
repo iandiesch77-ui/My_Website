@@ -283,28 +283,103 @@ section {
 }
 
 .faq-section {
-padding: 50px 80px;
-max-width: 900px;
-margin: 0 auto;
+width: 100%;
+min-height: 80vh;
 background-color: #333333;
+padding: 100px 20px 80px 20px;
+box-sizing: border-box;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 40px;
+    margin-top: 20;
+    margin-bottom: 50px;
 }
 
 .section-title h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-weight: 700;
 }
 
 .faq-container {
+    max-width: 900px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
-.faq-item
+.faq-card {
+    background-color:rgb(36, 35, 35);
+    border: 1px solid rgba(255, 0, 200, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.faq-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(36, 35, 35, 0.9);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.faq-card[open] {
+    border-color: #d400ff;
+    box-shadow: 0 8px 20px rgba(212, 0, 255, 0.5);
+}
+
+.faq-card-header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
+
+.faq-card-header::webkit-details-marker {
+    display:none;
+}
+
+.faq-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #d400ff;
+    transition: color 0.3s ease;
+}
+
+.faq-card:hover .faq-title {
+    color: #00ff88;
+}
+
+.faq-arrow {
+    font-size: 0.82rem;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.faq-card[open] .faq-arrow {
+    transform: rotate(180deg);
+}
+
+.faq-card-body {
+    padding: 0 25px 22px 25px;
+    color: #dddddd;
+    font-size: 1rem;
+    line-height: 1.6;
+    border-top: 1px solid rgba(255, 0, 200, 0.5);
+    margin-top: 5px;
+    padding-top: 18px;
+}
+
+.faq-card-body code {
+    background-color: rgba(255, 0, 200, 0.1);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+}
