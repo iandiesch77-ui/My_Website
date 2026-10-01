@@ -1,0 +1,139 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KeineAhnung.net</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body>
+        <header class="navbar">
+            <!-- keineahnung.net -->
+            <div class="logo">keineahnung.net</div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#features">features</a>
+                <a href="#faq">faq</a>
+                <a href="#contact">contact</a>
+            </nav>
+        </header>
+        <section id="home" class="hero-section">
+            <video autoplay muted loop class="bg-video">
+                <source src="bg-video.mp4" type="video/mp4">
+                Dein Browser unterstützt das Video-Tag nicht.
+            </video>
+            <div class="video-overlay"></div>
+            <div class="hero-content">
+                <h1>Willkommen, du geile Sau!</h1>
+                <p class="sub-text">Noch geiler bist du, wenn du Joinst!</p>
+            <div class="button-container">
+                <button class="btn btn-server" id="server-btn" onclick="copyIP('wills-barrie.tun.ply.gg')">Server Beitreten</button>          
+            <a href="https://discord.gg/yBDVDqnrYS" target="_blank" class="btn btn-discord">Discord Beitreten</a>
+            </div>
+            </div>
+            <div class="server-info-box">
+                <div class="info-row">
+                    <h3>Server IP</h3>
+                    <span class="server-ip" onclick="copyIP()" title="Klicken zum Kopieren">wills-barrie.tun.ply.gg</span>
+                </div>
+                <div class="info-row">
+                    <h4>Version</h4>
+                    <p class="server-version">1.21.11</p>
+                </div>
+            </div>
+            <script>
+                function copyIP(ip) {
+                    const serverIP = "wills-barrie.tun.ply.gg";
+                    const btn = document.getElementById("server-btn");
+
+                    navigator.clipboard.writeText(serverIP)
+                        .then(() => {
+                            btn.innerHTML = "&#10003; IP Kopiert!";
+                            btn.classList.add("copied");
+                            setTimeout(() => {
+                                btn.innerHTML = "Server Beitreten";
+                                btn.classList.remove("copied");
+                            }, 2000);
+                        })
+                        .catch(err => {
+                            btn.innerHTML = "Fehler beim Kopieren!";
+                            console.error('Fehler beim Kopieren der IP:', err);
+                        });
+                }
+            </script>
+        </section>
+        <section id="features" class="features-section">
+            <h2>Unsere Features</h2>
+            <div class="title-underline"></div>
+            <div class="feature-grid">
+                <div class="features-card">
+                    <div class="feature-icon">🏗️</div>
+                    <h3>Free Build</h3>
+                    <p>Bau einfach drauf los!</p>
+                    </div>
+                <div class="features-card">
+                    <div class="feature-icon">⚔️</div>
+                    <h3>PvP</h3>
+                    <p>Du kannst jeden (fast) ueberall Toeten!</p>
+                    </div>
+                <div class="features-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>Storyline</h3>
+                    <p>Der Server hat fuer jede Strucktur und jeden Npc eine eigene Storyline.</p>
+                    </div>
+                <div class="features-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Coole Leute!</h3>
+                    <p>Spiele mit den absolut Coolsten (und Nettesten hoffe ich) Leuten!</p>
+                    </div>
+                <div class="features-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Super duper dufte Struckturen!</h3>
+                    <p>Super geile Dungeons mit vielen Gegnern, Bossen und ganz wichtig: LOOT!</p>
+                    </div>
+                <div class="features-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>(hoffentlich) Niedrige Latenz</h3>
+                    <p>Wir bemuehen uns darum, einen stabilen Server zu bieten!</p>
+                    </div>
+            </div>
+        </section>
+        <section id="faq" class="faq-section">
+            <div class="section-title">
+            <h2>FAQ</h2>
+            <div class="title-underline"></div>
+            </div>
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary class="faq-questions">
+                        <span>Wie verbinde ich mich mit dem Server?</span>
+                        <span class="faq-arrow">↓</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p> Starte Minecraft (version 1.21.11), klicke unter Mehrspieler auf Server hinzufuegen und trage bei server adresse <code>wills-barrie.tun.ply.gg</code> ein.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <span>Welche Mods Benoetige ich?</span>
+                        <span class="faq-arrow">↓</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Du Benoetigst die Mods Easy Npc + Enpc config ui, Enpc Core, Mob AI Tweaks und Lootr ( Voicechatmod wird empfohlen aber nicht benoetigt! )</p>
+                    </div>
+                </details>
+
+                <deitails class="faq-item">
+                    <summary class="faq-question">
+                        <span>Gibt es PvP auf dem Server></span>
+                        <span class="faq-arrow">↓</span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>JA! PvP ist gurndsaetzlich aktiv! Es gibt nur einige Zonen in denen PvP aus ist, diese sind gekennzeichnet!</p>
+                    </div>
+                </deitails>
+            </div>
+        </section>
+    </body>
+</html>
