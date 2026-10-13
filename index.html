@@ -9,12 +9,12 @@
     <body>
         <header class="navbar">
             <!-- keineahnung.net -->
-            <div class="logo">keineahnung.net</div>
+            <a class="logo" href="#home" aria-label="KeineAhnung.net Startseite">keineahnung<span>.net</span></a>
             <nav>
                 <a href="#home">Home</a>
-                <a href="#features">features</a>
-                <a href="#faq">faq</a>
-                <a href="#contact">contact</a>
+                <a href="#features">Features</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Kontakt</a>
             </nav>
         </header>
         <section id="home" class="hero-section">
@@ -23,18 +23,20 @@
                 Dein Browser unterstützt das Video-Tag nicht.
             </video>
             <div class="video-overlay"></div>
+            <div class="hero-glow"></div>
             <div class="hero-content">
-                <h1>Willkommen, du geile Sau!</h1>
-                <p class="sub-text">Noch geiler bist du, wenn du Joinst!</p>
+                <p class="eyebrow"><span class="status-dot"></span> DEIN NÄCHSTES ABENTEUER BEGINNT HIER</p>
+                <h1>Willkommen, <span>du geile Sau!</span></h1>
+                <p class="sub-text">Noch geiler bist du, wenn du joinst! <span class="sparkle">✦</span></p>
             <div class="button-container">
                 <button class="btn btn-server" id="server-btn" onclick="copyIP('wills-barrie.tun.ply.gg')">Server Beitreten</button>          
             <a href="https://discord.gg/yBDVDqnrYS" target="_blank" class="btn btn-discord">Discord Beitreten</a>
             </div>
             </div>
-            <div class="server-info-box">
+            <div class="server-info-box glass-card">
                 <div class="info-row">
-                    <h3>Server IP</h3>
-                    <span class="server-ip" onclick="copyIP()" title="Klicken zum Kopieren">wills-barrie.tun.ply.gg</span>
+                    <h3><span class="tiny-icon">⌁</span> Server-IP</h3>
+                    <button class="server-ip" onclick="copyIP()" title="Server-IP kopieren" aria-label="Server-IP kopieren">wills-barrie.tun.ply.gg <span>⧉</span></button>
                 </div>
                 <div class="info-row">
                     <h4>Version</h4>
@@ -48,7 +50,8 @@
 
                     navigator.clipboard.writeText(serverIP)
                         .then(() => {
-                            btn.innerHTML = "&#10003; IP Kopiert!";
+                            btn.innerHTML = "✓ IP kopiert!";
+                            showToast("Server-IP in die Zwischenablage kopiert!");
                             btn.classList.add("copied");
                             setTimeout(() => {
                                 btn.innerHTML = "Server Beitreten";
@@ -56,42 +59,44 @@
                             }, 2000);
                         })
                         .catch(err => {
-                            btn.innerHTML = "Fehler beim Kopieren!";
+                            btn.innerHTML = "Kopieren nicht möglich";
+                            showToast("Bitte kopiere die IP manuell: " + serverIP);
                             console.error('Fehler beim Kopieren der IP:', err);
                         });
                 }
             </script>
         </section>
         <section id="features" class="features-section">
-            <h2>Unsere Features</h2>
+            <p class="section-kicker">WAS DICH ERWARTET</p>
+            <h2>Unsere <span class="gradient-text">Features</span></h2>
             <div class="title-underline"></div>
             <div class="feature-grid">
-                <div class="features-card">
+                <div class="features-card reveal">
                     <div class="feature-icon">🏗️</div>
                     <h3>Free Build</h3>
                     <p>Bau einfach drauf los!</p>
                     </div>
-                <div class="features-card">
+                <div class="features-card reveal">
                     <div class="feature-icon">⚔️</div>
                     <h3>PvP</h3>
-                    <p>Du kannst jeden (fast) ueberall Toeten!</p>
+                    <p>Du kannst jeden (fast) überall töten!</p>
                     </div>
-                <div class="features-card">
+                <div class="features-card reveal">
                     <div class="feature-icon">💎</div>
                     <h3>Storyline</h3>
-                    <p>Der Server hat fuer jede Strucktur und jeden Npc eine eigene Storyline.</p>
+                    <p>Der Server hat für jede Struktur und jeden Npc eine eigene Storyline.</p>
                     </div>
-                <div class="features-card">
+                <div class="features-card reveal">
                     <div class="feature-icon">👥</div>
                     <h3>Coole Leute!</h3>
                     <p>Spiele mit den absolut Coolsten (und Nettesten hoffe ich) Leuten!</p>
                     </div>
-                <div class="features-card">
+                <div class="features-card reveal">
                     <div class="feature-icon">🎮</div>
-                    <h3>Super duper dufte Struckturen!</h3>
+                    <h3>Super duper dufte Strukturen!</h3>
                     <p>Super geile Dungeons mit vielen Gegnern, Bossen und ganz wichtig: LOOT!</p>
                     </div>
-                <div class="features-card">
+                <div class="features-card reveal">
                     <div class="feature-icon">⚡</div>
                     <h3>(hoffentlich) Niedrige Latenz</h3>
                     <p>Wir bemuehen uns darum, einen stabilen Server zu bieten!</p>
@@ -100,7 +105,8 @@
         </section>
         <section id="faq" class="faq-section">
             <div class="section-title">
-            <h2>FAQ</h2>
+            <p class="section-kicker">GUTE FRAGE!</p>
+            <h2>Häufig gestellte <span class="gradient-text">Fragen</span></h2>
             <div class="title-underline"></div>
             </div>
             <div class="faq-container">
@@ -110,7 +116,7 @@
                         <span class="faq-arrow">↓</span>
                     </summary>
                     <div class="faq-card-body">
-                        <p> Starte Minecraft (version 1.21.11), klicke unter Mehrspieler auf Server hinzufuegen und trage bei server adresse <code>wills-barrie.tun.ply.gg</code> ein.</p>
+                        <p> Starte Minecraft (version 1.21.11), klicke unter Mehrspieler auf Server hinzufügen und trage bei Serveradresse <code>wills-barrie.tun.ply.gg</code> ein.</p>
                     </div>
                 </details>
 
@@ -120,21 +126,83 @@
                         <span class="faq-arrow">↓</span>
                     </summary>
                     <div class="faq-card-body">
-                        <p>Du Benoetigst die Mods Easy Npc + Enpc config ui, Enpc Core, Mob AI Tweaks und Lootr ( Voicechatmod wird empfohlen aber nicht benoetigt! )</p>
+                        <p>Du Benötigst die Mods Easy Npc + Enpc config ui, Enpc Core, Mob AI Tweaks und Lootr ( Voicechatmod wird empfohlen aber nicht benoetigt! )</p>
                     </div>
                 </details>
 
                 <details class="faq-card">
                     <summary class="faq-card-header">
-                        <span class="faq-title">Gibt es PvP auf dem Server></span>
+                        <span class="faq-title">Gibt es PvP auf dem Server?</span>
                         <span class="faq-arrow">↓</span>
                     </summary>
                     <div class="faq-card-body">
-                        <p>JA! PvP ist gurndsaetzlich aktiv! Es gibt nur einige Zonen in denen PvP aus ist, diese sind gekennzeichnet!</p>
+                        <p>JA! PvP ist grundsätzlich aktiv! Es gibt nur einige Zonen in denen PvP aus ist, diese sind gekennzeichnet!</p>
                     </div>
-                </deitails>
+                </details>
             </div>
         </section>
+        <section id="contact" class="contact-section">
+            <div class="contact-card reveal">
+                <div class="contact-orb">✦</div>
+                <p class="section-kicker">DEIN PLATZ WARTET</p>
+                <h2>Bereit für dein <span class="gradient-text">Abenteuer?</span></h2>
+                <p>Schließ dich der Community an und werde Teil der Story.</p>
+                <div class="button-container contact-buttons">
+                    <button class="btn btn-server" onclick="copyIP()">⌁ Server-IP kopieren</button>
+                    <a href="https://discord.gg/yBDVDqnrYS" target="_blank" rel="noopener noreferrer" class="btn btn-discord">Discord öffnen ↗</a>
+                </div>
+            </div>
+            <footer><a class="logo" href="#home">keineahnung<span>.net</span></a><span>Gebaut für Abenteuer <span class="footer-heart">♥</span></span><a href="#home" class="back-top">Nach oben ↑</a></footer>
+        </section>
+        <div class="scroll-progress" aria-hidden="true"></div>
+        <div class="toast" role="status" aria-live="polite"></div>
+        <button class="back-to-top" aria-label="Zurück nach oben" title="Zurück nach oben" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+        <script>
+            function showToast(message) {
+                const toast = document.querySelector('.toast');
+                toast.textContent = message;
+                toast.classList.add('show');
+                clearTimeout(window.toastTimer);
+                window.toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+            }
+            // Animate cards as they enter the viewport.
+            const revealObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            document.querySelectorAll('.reveal, .features-card').forEach(el => revealObserver.observe(el));
+
+            // Highlight the active navigation section while scrolling.
+            const sections = document.querySelectorAll('body section[id]');
+            const navLinks = document.querySelectorAll('.navbar nav a');
+            const sectionObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+                    }
+                });
+            }, { rootMargin: '-35% 0px -55% 0px' });
+            sections.forEach(section => sectionObserver.observe(section));
+
+            window.addEventListener('scroll', () => {
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                document.querySelector('.scroll-progress').style.width = (maxScroll > 0 ? window.scrollY / maxScroll * 100 : 0) + '%';
+                document.querySelector('.back-to-top').classList.toggle('visible', window.scrollY > 500);
+            }, { passive: true });
+
+            // Keep the FAQ tidy: only one answer open at a time.
+            document.querySelectorAll('.faq-card').forEach(card => {
+                card.addEventListener('toggle', () => {
+                    if (card.open) document.querySelectorAll('.faq-card').forEach(other => {
+                        if (other !== card) other.open = false;
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
 
