@@ -679,3 +679,59 @@ footer .logo { font-size: 1.25rem; }
     *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     .reveal { opacity: 1; transform: none; }
 }
+
+
+/* Support question form inside the FAQ accordion */
+.support-question-form { display: grid; gap: 10px; margin-top: 18px; }
+.support-question-form label { color: #f1e9f8; font-weight: 600; font-size: .94rem; }
+.support-question-form label span { color: var(--muted); font-weight: 400; }
+.support-question-form input,
+.support-question-form select,
+.support-question-form textarea {
+    width: 100%; box-sizing: border-box; padding: 13px 14px; border-radius: 12px;
+    border: 1px solid rgba(223,53,255,.24); background: rgba(13,11,19,.72);
+    color: #f7f1ff; font: inherit; outline: none; transition: border-color .2s ease, box-shadow .2s ease;
+}
+.support-question-form select { color-scheme: dark; }
+.support-question-form input:focus,
+.support-question-form select:focus,
+.support-question-form textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(223,53,255,.13); }
+.support-question-form textarea { resize: vertical; min-height: 110px; }
+.support-question-form input::placeholder,
+.support-question-form textarea::placeholder { color: #8f879c; }
+.support-form-footer { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 5px; flex-wrap: wrap; }
+.support-form-footer small { color: var(--muted); font-size: .8rem; }
+.support-form-note { color: var(--mint); font-size: .9rem; margin: 3px 0 0; }
+@media (max-width: 560px) {
+    .support-form-footer { align-items: stretch; flex-direction: column; }
+    .support-form-footer .btn { width: 100%; }
+}
+
+/* Public community FAQ / Q&A */
+.faq-intro { max-width: 680px; margin: 14px auto 0; color: #c9c2d4; line-height: 1.65; }
+.faq-community { max-width: 900px; margin: 0 auto; }
+.faq-ask-form { padding: 24px; margin: 0 0 38px; border: 1px solid rgba(223,53,255,.4); border-radius: 16px; background: rgba(20,17,27,.88); box-shadow: 0 10px 35px rgba(0,0,0,.2); }
+.faq-ask-form h3, .faq-community-list-head h3 { margin: 0; color: #fff; font-size: 1.3rem; }
+.faq-community-list-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin: 0 0 16px; }
+.faq-refresh-btn { border: 1px solid rgba(223,53,255,.45); color: #f8eaff; background: rgba(223,53,255,.1); padding: 9px 13px; border-radius: 10px; font: inherit; cursor: pointer; }
+.faq-refresh-btn:hover { background: rgba(223,53,255,.22); }
+.community-load-note { color: #bfb5ce; font-size: .9rem; margin: 0 0 14px; }
+.community-empty, .community-no-answers { color: #c9c2d4; line-height: 1.6; }
+.community-question-meta, .community-answer-meta { color: #a99db7; font-size: .82rem; line-height: 1.5; }
+.community-question-meta { margin: 0 0 16px; }
+.community-answers { display: grid; gap: 10px; margin: 0 0 20px; }
+.community-answer { border-left: 3px solid #d400ff; background: rgba(255,255,255,.045); padding: 12px 14px; border-radius: 0 10px 10px 0; }
+.community-answer-text { margin: 0 0 8px; color: #f5effa; line-height: 1.65; white-space: pre-wrap; overflow-wrap: anywhere; }
+.community-answer-meta { display: block; }
+.community-answer-form { border-top: 1px solid rgba(255,255,255,.1); padding-top: 16px; display: grid; gap: 10px; }
+.community-answer-form h4 { color: #fff; font-size: 1rem; margin: 0 0 2px; }
+.community-answer-form input, .community-answer-form textarea { width: 100%; box-sizing: border-box; padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(223,53,255,.24); background: rgba(13,11,19,.72); color: #f7f1ff; font: inherit; outline: none; }
+.community-answer-form textarea { resize: vertical; min-height: 80px; }
+.community-answer-form input:focus, .community-answer-form textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(223,53,255,.13); }
+.community-answer-form input::placeholder, .community-answer-form textarea::placeholder { color: #8f879c; }
+.community-answer-form .btn:disabled, .faq-ask-form .btn:disabled { opacity: .65; cursor: wait; }
+@media (max-width: 560px) {
+  .faq-ask-form { padding: 17px; }
+  .faq-community-list-head { align-items: flex-start; flex-direction: column; }
+  .community-question-meta { overflow-wrap: anywhere; }
+}

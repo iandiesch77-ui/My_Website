@@ -1,0 +1,291 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KeineAhnung.net</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body>
+        <header class="navbar">
+            <!-- keineahnung.net -->
+            <a class="logo" href="#home" aria-label="KeineAhnung.net Startseite">keineahnung<span>.net</span></a>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Kontakt</a>
+            </nav>
+        </header>
+        <section id="home" class="hero-section">
+            <video autoplay muted loop class="bg-video">
+                <source src="bg-video.mp4" type="video/mp4">
+                Dein Browser unterstützt das Video-Tag nicht.
+            </video>
+            <div class="video-overlay"></div>
+            <div class="hero-glow"></div>
+            <div class="hero-content">
+                <p class="eyebrow"><span class="status-dot"></span> DEIN NÄCHSTES ABENTEUER BEGINNT HIER</p>
+                <h1>Willkommen, <span>du geile Sau!</span></h1>
+                <p class="sub-text">Noch geiler bist du, wenn du joinst! <span class="sparkle">✦</span></p>
+            <div class="button-container">
+                <button class="btn btn-server" id="server-btn" onclick="copyIP('wills-barrie.tun.ply.gg')">Server Beitreten</button>          
+            <a href="https://discord.gg/4WbknWFjur" target="_blank" class="btn btn-discord">Discord Beitreten</a>
+            </div>
+            </div>
+            <div class="server-info-box glass-card">
+                <div class="info-row">
+                    <h3><span class="tiny-icon">⌁</span> Server-IP</h3>
+                    <button class="server-ip" onclick="copyIP()" title="Server-IP kopieren" aria-label="Server-IP kopieren">wills-barrie.tun.ply.gg <span>⧉</span></button>
+                </div>
+                <div class="info-row">
+                    <h4>Version</h4>
+                    <p class="server-version">1.21.11</p>
+                </div>
+            </div>
+            <script>
+                function copyIP(ip) {
+                    const serverIP = "wills-barrie.tun.ply.gg";
+                    const btn = document.getElementById("server-btn");
+
+                    navigator.clipboard.writeText(serverIP)
+                        .then(() => {
+                            btn.innerHTML = "✓ IP kopiert!";
+                            showToast("Server-IP in die Zwischenablage kopiert!");
+                            btn.classList.add("copied");
+                            setTimeout(() => {
+                                btn.innerHTML = "Server Beitreten";
+                                btn.classList.remove("copied");
+                            }, 2000);
+                        })
+                        .catch(err => {
+                            btn.innerHTML = "Kopieren nicht möglich";
+                            showToast("Bitte kopiere die IP manuell: " + serverIP);
+                            console.error('Fehler beim Kopieren der IP:', err);
+                        });
+                }
+            </script>
+        </section>
+        <section id="features" class="features-section">
+            <p class="section-kicker">WAS DICH ERWARTET</p>
+            <h2>Unsere <span class="gradient-text">Features</span></h2>
+            <div class="title-underline"></div>
+            <div class="feature-grid">
+                <div class="features-card reveal">
+                    <div class="feature-icon">🏗️</div>
+                    <h3>Free Build</h3>
+                    <p>Bau einfach drauf los!</p>
+                    </div>
+                <div class="features-card reveal">
+                    <div class="feature-icon">⚔️</div>
+                    <h3>PvP</h3>
+                    <p>Du kannst jeden (fast) überall töten!</p>
+                    </div>
+                <div class="features-card reveal">
+                    <div class="feature-icon">💎</div>
+                    <h3>Storyline</h3>
+                    <p>Der Server hat für jede Struktur und jeden Npc eine eigene Storyline.</p>
+                    </div>
+                <div class="features-card reveal">
+                    <div class="feature-icon">👥</div>
+                    <h3>Coole Leute!</h3>
+                    <p>Spiele mit den absolut Coolsten (und Nettesten hoffe ich) Leuten!</p>
+                    </div>
+                <div class="features-card reveal">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Super duper dufte Strukturen!</h3>
+                    <p>Super geile Dungeons mit vielen Gegnern, Bossen und ganz wichtig: LOOT!</p>
+                    </div>
+                <div class="features-card reveal">
+                    <div class="feature-icon">⚡</div>
+                    <h3>(hoffentlich) Niedrige Latenz</h3>
+                    <p>Wir bemuehen uns darum, einen stabilen Server zu bieten!</p>
+                    </div>
+            </div>
+        </section>
+        <section id="faq" class="faq-section">
+            <div class="section-title">
+                <p class="section-kicker">FRAG DIE COMMUNITY</p>
+                <h2>Fragen <span class="gradient-text">& Antworten</span></h2>
+                <div class="title-underline"></div>
+                <p class="faq-intro">Klapp eine Frage auf, hilf anderen mit einer Antwort oder stell selbst eine Frage. Alles direkt hier auf der Website.</p>
+            </div>
+            <div class="faq-community">
+                <form id="community-question-form" class="support-question-form faq-ask-form">
+                    <h3>Stell eine neue Frage</h3>
+                    <label for="community-name">Dein Name / Minecraft-Name <span>(optional)</span></label>
+                    <input id="community-name" name="name" type="text" maxlength="40" placeholder="z. B. Steve" autocomplete="nickname">
+                    <label for="community-topic">Thema</label>
+                    <select id="community-topic" name="topic" required>
+                        <option value="">Thema auswählen …</option>
+                        <option>Server & Verbindung</option>
+                        <option>Mods & technische Probleme</option>
+                        <option>Regeln & Spieler</option>
+                        <option>Bug melden</option>
+                        <option>Sonstige Frage</option>
+                    </select>
+                    <label for="community-question">Deine Frage</label>
+                    <textarea id="community-question" name="question" rows="3" minlength="10" maxlength="1000" placeholder="Wobei brauchst du Hilfe?" required></textarea>
+                    <div class="support-form-footer">
+                        <small>Keine Passwörter, privaten Daten oder Beleidigungen posten. Beiträge sind öffentlich.</small>
+                        <button class="btn btn-discord" type="submit">Frage veröffentlichen ↗</button>
+                    </div>
+                    <p class="support-form-note" id="community-question-note" role="status" aria-live="polite"></p>
+                </form>
+                <div class="faq-community-list-head">
+                    <h3>Community-Fragen</h3>
+                    <button class="faq-refresh-btn" id="refresh-questions" type="button">↻ Aktualisieren</button>
+                </div>
+                <p id="community-load-note" class="community-load-note" role="status">Fragen werden geladen …</p>
+                <div id="community-questions" class="faq-container" aria-live="polite"></div>
+            </div>
+        </section>
+        <section id="contact" class="contact-section">
+            <div class="contact-card reveal">
+                <div class="contact-orb">✦</div>
+                <p class="section-kicker">DEIN PLATZ WARTET</p>
+                <h2>Bereit für dein <span class="gradient-text">Abenteuer?</span></h2>
+                <p>Schließ dich der Community an und werde Teil der Story.</p>
+                <div class="button-container contact-buttons">
+                    <button class="btn btn-server" onclick="copyIP()">⌁ Server-IP kopieren</button>
+                    <a href="https://discord.gg/4WbknWFjur" target="_blank" rel="noopener noreferrer" class="btn btn-discord">Discord öffnen ↗</a>
+                </div>
+            </div>
+            <footer><a class="logo" href="#home">keineahnung<span>.net</span></a><span>Gebaut für Abenteuer <span class="footer-heart">♥</span></span><div class="footer-legal"><a href="Impressum.html">Impressum</a><a href="Datenschutz.html">Datenschutz</a></div><a href="#home" class="back-top">Nach oben ↑</a></footer>
+        </section>
+        <div class="scroll-progress" aria-hidden="true"></div>
+        <div class="toast" role="status" aria-live="polite"></div>
+        <button class="back-to-top" aria-label="Zurück nach oben" title="Zurück nach oben" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+        <script>
+            function showToast(message) {
+                const toast = document.querySelector('.toast');
+                toast.textContent = message;
+                toast.classList.add('show');
+                clearTimeout(window.toastTimer);
+                window.toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+            }
+            // Animate cards as they enter the viewport.
+            const revealObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            document.querySelectorAll('.reveal, .features-card').forEach(el => revealObserver.observe(el));
+
+            // Highlight the active navigation section while scrolling.
+            const sections = document.querySelectorAll('body section[id]');
+            const navLinks = document.querySelectorAll('.navbar nav a');
+            const sectionObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+                    }
+                });
+            }, { rootMargin: '-35% 0px -55% 0px' });
+            sections.forEach(section => sectionObserver.observe(section));
+
+            window.addEventListener('scroll', () => {
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                document.querySelector('.scroll-progress').style.width = (maxScroll > 0 ? window.scrollY / maxScroll * 100 : 0) + '%';
+                document.querySelector('.back-to-top').classList.toggle('visible', window.scrollY > 500);
+            }, { passive: true });
+
+            // Offline/static Community FAQ: no API calls, no Discord integration.
+            // Entries are saved in this browser only. Shared public posts require a database/backend.
+            const questionForm = document.getElementById('community-question-form');
+            const questionList = document.getElementById('community-questions');
+            const loadNote = document.getElementById('community-load-note');
+            const questionNote = document.getElementById('community-question-note');
+            const STORAGE_KEY = 'communityFaqQuestions_v1';
+            const safeText = value => String(value ?? '');
+            const defaultQuestions = [
+                { id:'default-1', name:'Team', topic:'Mods & technische Probleme', question:'Wie installiere ich Mods richtig?', createdAt:'2026-01-01T12:00:00.000Z', answers:[{name:'Team',text:'Prüfe zuerst deine Minecraft-Version und ob du Fabric oder Forge verwendest. Lade die passende Mod-Datei herunter und lege sie in den mods-Ordner. Lies immer die Installationshinweise der Mod.',createdAt:'2026-01-01T12:00:00.000Z'}] },
+                { id:'default-2', name:'Team', topic:'Minecraft', question:'Was kann ich tun, wenn Minecraft abstürzt?', createdAt:'2026-01-02T12:00:00.000Z', answers:[{name:'Team',text:'Starte mit dem neuesten Crash-Report: Entferne zuletzt hinzugefügte Mods testweise und kontrolliere, ob alle Mods zur Minecraft-Version und zum Loader passen.',createdAt:'2026-01-02T12:00:00.000Z'}] },
+                { id:'default-3', name:'Team', topic:'Community', question:'Wie kann ich der Community beitreten?', createdAt:'2026-01-03T12:00:00.000Z', answers:[{name:'Team',text:'Schau auf der Website nach den aktuellen Community-Informationen und beachte die Regeln, bevor du mitmachst.',createdAt:'2026-01-03T12:00:00.000Z'}] },
+                { id:'default-4', name:'Team', topic:'Bug melden', question:'Welche Infos sollte eine Bugmeldung enthalten?', createdAt:'2026-01-04T12:00:00.000Z', answers:[{name:'Team',text:'Beschreibe die Schritte zum Nachstellen, was du erwartet hast und was tatsächlich passiert ist. Ergänze nach Möglichkeit Fehlermeldung, Versionen und einen Screenshot – aber keine privaten Daten.',createdAt:'2026-01-04T12:00:00.000Z'}] }
+            ];
+            function makeText(tag, className, value) {
+                const node = document.createElement(tag);
+                if (className) node.className = className;
+                node.textContent = safeText(value);
+                return node;
+            }
+            function getQuestions() {
+                try {
+                    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+                    const custom = Array.isArray(saved) ? saved.filter(q => q && !String(q.id || '').startsWith('default-')) : [];
+                    // Always restore the built-in FAQ at the top; it cannot be edited or deleted.
+                    return [...defaultQuestions, ...custom];
+                } catch { return [...defaultQuestions]; }
+            }
+            function saveQuestions(items) {
+                // Only user-created questions are persisted; defaults are always injected above.
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(items.filter(q => !String(q.id || '').startsWith('default-'))));
+            }
+            let questions = getQuestions();
+            saveQuestions(questions);
+            function makeAction(label, className, onClick) {
+                const button = document.createElement('button');
+                button.type = 'button'; button.className = className; button.textContent = label;
+                button.addEventListener('click', onClick); return button;
+            }
+            function renderCommunityQuestions() {
+                questionList.replaceChildren();
+                // Built-in FAQ is always pinned first, in its original order.
+                questions.sort((a,b) => {
+                    const ad = String(a.id || '').startsWith('default-');
+                    const bd = String(b.id || '').startsWith('default-');
+                    if (ad && bd) return Number(a.id.split('-')[1]) - Number(b.id.split('-')[1]);
+                    return ad ? -1 : bd ? 1 : new Date(b.createdAt) - new Date(a.createdAt);
+                });
+                questions.forEach(question => {
+                    const isDefault = String(question.id || '').startsWith('default-');
+                    const card = document.createElement('details'); card.className = 'faq-card community-question-card';
+                    const summary = document.createElement('summary'); summary.className = 'faq-card-header';
+                    summary.append(makeText('span','faq-title',question.question), makeText('span','faq-arrow',isDefault ? '📌 ↓' : '↓')); card.append(summary);
+                    const body = document.createElement('div'); body.className = 'faq-card-body community-answer-body';
+                    body.append(makeText('p','community-question-meta',`${isDefault ? '📌 Standardfrage · ' : ''}${question.topic} · gefragt von ${question.name || 'Anonym'} · ${new Date(question.createdAt).toLocaleString('de-DE')}`));
+                    if (!isDefault) body.append(makeAction('Frage löschen','faq-refresh-btn',()=>{
+                        if (!confirm('Diese Frage und alle zugehörigen Antworten wirklich löschen?')) return;
+                        questions = questions.filter(q => q.id !== question.id); saveQuestions(questions); renderCommunityQuestions();
+                    }));
+                    const answers = document.createElement('div'); answers.className = 'community-answers';
+                    if (!question.answers?.length) answers.append(makeText('p','community-no-answers','Noch keine Antworten – sei die erste Person, die hilft!'));
+                    (question.answers || []).forEach((answer,index) => {
+                        const a=document.createElement('div'); a.className='community-answer';
+                        a.append(makeText('p','community-answer-text',answer.text),makeText('small','community-answer-meta',`Antwort von ${answer.name || 'Anonym'} · ${new Date(answer.createdAt).toLocaleString('de-DE')}`));
+                        // Antworten zu Standardfragen sind unveränderlich.
+                        if (!isDefault) a.append(makeAction('Antwort löschen','faq-refresh-btn',()=>{
+                            if (!confirm('Diese Antwort wirklich löschen?')) return;
+                            question.answers.splice(index,1); saveQuestions(questions); renderCommunityQuestions();
+                        }));
+                        answers.append(a);
+                    });
+                    body.append(answers);
+                    if (isDefault) {
+                        body.append(makeText('p','community-question-meta','Standardfragen sind angepinnt und können nicht beantwortet oder gelöscht werden.'));
+                    } else {
+                        const form=document.createElement('form'); form.className='community-answer-form'; form.append(makeText('h4','','Deine Antwort'));
+                        const name=document.createElement('input'); name.name='name'; name.maxLength=40; name.placeholder='Dein Name (optional)'; name.autocomplete='nickname';
+                        const text=document.createElement('textarea'); text.name='answer'; text.rows=3; text.minLength=2; text.maxLength=1200; text.required=true; text.placeholder='Schreib eine hilfreiche Antwort …';
+                        const footer=document.createElement('div'); footer.className='support-form-footer'; footer.append(makeText('small','','Bleib freundlich und teile keine privaten Daten.'));
+                        const submit=document.createElement('button'); submit.className='btn btn-discord'; submit.type='submit'; submit.textContent='Antwort veröffentlichen'; footer.append(submit);
+                        const status=makeText('p','support-form-note',''); status.setAttribute('role','status'); form.append(name,text,footer,status);
+                        form.addEventListener('submit',event=>{event.preventDefault(); if(!form.reportValidity())return; question.answers=question.answers||[]; question.answers.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),name:name.value.trim()||'Anonym',text:text.value.trim(),createdAt:new Date().toISOString()}); saveQuestions(questions); renderCommunityQuestions(); showToast('Antwort lokal gespeichert!');});
+                        body.append(form);
+                    }
+                    card.append(body); questionList.append(card);
+                });
+                loadNote.textContent = `${questions.length} Frage(n) – lokal in diesem Browser gespeichert.`;
+            }
+            questionForm?.addEventListener('submit',event=>{event.preventDefault(); if(!questionForm.reportValidity())return; questions.unshift({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),name:document.getElementById('community-name').value.trim()||'Anonym',topic:document.getElementById('community-topic').value,question:document.getElementById('community-question').value.trim(),createdAt:new Date().toISOString(),answers:[]}); saveQuestions(questions); questionForm.reset(); questionNote.textContent='Frage wurde in diesem Browser gespeichert.'; renderCommunityQuestions(); showToast('Frage hinzugefügt!');});
+            document.getElementById('refresh-questions')?.addEventListener('click',()=>{questions=getQuestions();renderCommunityQuestions();});
+            renderCommunityQuestions();
+
+        </script>
+    </body>
+</html>
+
