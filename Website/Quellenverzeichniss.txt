@@ -1,0 +1,11 @@
+Quellenverzeichniss
+1.1 DinMedia: Interaktionsprinzipien. 
+https://www.dinmedia.de/de/norm/din-en-iso-9241-110/320862700
+1.2 WHATWG: „HTML Standard: Introduction and History“.
+https://html.spec.whatwg.org/dev/introduction.html
+1.3 Bund der Freien Waldorfschulen: „Die Jahresarbeit: Schlussakkord der Waldorfschulzeit“. https://www.waldorfschule.de/artikel/die-jahresarbeit-schlussakkord-der-waldorfschulzeit
+1.4 MDN Web Docs: „Window: localStorage property“. https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+1.5 Eigene Projektdateien: Website-Dateien: index.html, Style.css, Impressum.html, Datenschutz.html und README.txt. https://github.com/iandiesch77-ui/My_Website
+1.6 MDN Web Docs: „Basic HTML syntax“. https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax
+1.7 MDN Web Docs: „How to structure a web form“. https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/How_to_structure_a_web_form
+1.8 MDN Web Docs: „Semantic HTML“. https://developer.mozilla.org/en-US/curriculum/core/semantic-html/
